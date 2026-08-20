@@ -1,38 +1,66 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #222;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #f1f1f1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
 }
 
-.App-link {
+/* Contenedor principal de contenidos */
+main {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 25px 60px 25px;
+  box-sizing: border-box;
+}
+
+/* Reglas generales para secciones */
+section {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #333;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* Encabezados */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #61dafb;
+  display: inline-block;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+p {
+  color: #ccc;
+  margin-top: 0;
+}
+
+/* Enlaces globales */
+a {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #a8eaff;
 }
