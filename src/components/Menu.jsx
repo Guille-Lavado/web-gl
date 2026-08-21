@@ -1,6 +1,6 @@
 import './Menu.css';
 
-function Menu() {
+function Menu({theme, toggleTheme}) {
   return (
     <nav className='menu'>
       <span className='logo'>&#62;&#95;</span>
@@ -9,6 +9,11 @@ function Menu() {
         <li><a href="#repositorios">Proyectos</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#estudios">Titulación</a></li>
+        <li>
+          <button className="btn-theme" onClick={toggleTheme}>
+            {theme === 'dark' ? 'Claro' : 'Oscuro'}
+          </button>
+        </li>
       </ul>
     </nav>
   );

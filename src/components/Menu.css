@@ -5,7 +5,7 @@
   box-sizing: border-box;
   width: 100%;
   padding: 20px 35px;
-  font-size: calc(7px + 2vmin);
+  font-size: 18px;
 }
 
 .menu ul {
@@ -22,24 +22,45 @@
 }
 
 .menu ul a {
-  color: inherit;
+  color: var(--text-color);
 }
 
 .menu ul a:hover {
-  color: #a8eaff;
+  color: var(--primary-accent-hover);
+}
+
+.btn-theme {
+  background-color: var(--btn-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-theme:hover {
+  background-color: var(--btn-hover);
 }
 
 .menu .logo {
   position: relative;
   bottom: 8px;
   font-size: 42px;
-  color: #61dafb;
+  color: var(--primary-accent);
 }
 
 @media (max-width: 600px) {
   .menu {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .menu ul {
+    flex-wrap: wrap;
   }
 
   .menu ul li {
