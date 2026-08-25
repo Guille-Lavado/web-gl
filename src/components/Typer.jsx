@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Typer.css";
 
-function Typer({text, repeat = true, onComplete = () => {}}) {
+function Typer({ text, repeat = true, onComplete = () => {} }) {
     const [positions, setPositions] = useState([]);
     const [count, setCount] = useState(0);
     
@@ -35,7 +35,7 @@ function Typer({text, repeat = true, onComplete = () => {}}) {
 
     // Notifica al padre en un efecto separado cuando se completa
     useEffect(() => {
-        if (count >= text.length) {
+        if (count > text.length) {
             repeat ? setCount(0) : onComplete();
         }
     }, [count, text.length, repeat, onComplete]);
@@ -48,16 +48,15 @@ function Typer({text, repeat = true, onComplete = () => {}}) {
             barRef.current.style.left = "0px";
         } else if (positions[count - 1] !== undefined) {
             barRef.current.style.left = `${positions[count - 1].left}px`;
-            barRef.current.style.top = `${positions[count - 1].top + 2}px`;
+            barRef.current.style.top = `${positions[count - 1].top}px`;
         }
     }, [count, positions]);
 
     return (
-        <h2 
+        <div 
             className={count < text.length ? 'typing': ''}
             style={{ position: "relative" }}
         >
-            <div ref={barRef} className="cursorBar"></div>
             {Array.from(text).map((char, index) => (
                 <span 
                     key={index}
@@ -69,7 +68,8 @@ function Typer({text, repeat = true, onComplete = () => {}}) {
                     {char === '\n' ? <br/> : char}
                 </span>
             ))}
-        </h2>
+            <span ref={barRef} className="cursorBar">|</span>
+        </div>
     );
 }
 
@@ -79,11 +79,10 @@ function MultiTyper({ texts, repeat = true }) {
     // Avanza al siguiente texto al finalizar el activo
     const handleComplete = () => {
         setActiveIndex((prev) => {
-            const nextIndex = prev + 1;
-            if (nextIndex >= texts.length) {
+            if (prev >= texts.length - 1) {
                 return repeat ? 0 : prev;
             }
-            return nextIndex;
+            return prev + 1;
         });
     };
 

@@ -1,21 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
-import {Typer, MultiTyper} from './Typer';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const saludos = [
-  "Hola Mundo.",
-  "Hello Word.",
-];
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Typer text="Guille Lavado"/>
-    <MultiTyper texts={saludos} />
+    <App />
   </React.StrictMode>
 );
 

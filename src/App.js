@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Menu from './components/Menu';
-import HomePague from './components/HomePague';
+import HomePague from './pages/HomePague';
 
 function App() {
   // UseState para controlar el tema

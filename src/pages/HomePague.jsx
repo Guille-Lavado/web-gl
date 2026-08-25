@@ -1,8 +1,28 @@
+import { Typer, MultiTyper } from '../components/Typer';
 import './HomePague.css';
 
 function HomePague() {
+  const saludos = [
+    "¡Hola, mundo!",
+    "Hello, world!",
+    "Bonjour, monde!",
+    "Ciao, mondo!",
+    "Hallo, Welt!",
+    "Olá, mundo!",
+    "Hola, món!",
+    "Hallo, wereld!",
+    "Привет, мир!",
+    "你好，世界！"
+  ];
+
   return (
     <main>
+      {/* Sección de Saludos */}
+      <section className='typer'>
+        <h1>
+          <MultiTyper texts={saludos} repeat={true} />
+        </h1>
+      </section>
       {/* Sección de Presentación / Saludo */}
       <section id='saludo' className='saludo'>
         <h1>Guillermo Lavado</h1>

@@ -1,8 +1,12 @@
+/* --- Sección: Typer --- */
+.typer .cursorBar {
+  font-family: monospace;
+}
+
 /* --- Sección: Saludo --- */
 .saludo h2 {
   font-size: 1.3rem;
   color: var(--text-muted);
-  border-bottom: none;
   font-weight: 400;
   margin-bottom: 15px;
 }
