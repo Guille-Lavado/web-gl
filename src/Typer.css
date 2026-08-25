@@ -1,0 +1,21 @@
+/* Animación del parpadeo */
+@keyframes blink {
+    0%, 50% {opacity: 1;}
+    51%, 99% {opacity: 0;}
+}
+
+.cursorBar {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color: black;
+    position: relative;
+    transition: left 0.1s ease;
+    animation: blink 1.1s infinite;
+}
+
+/* Cuando se está escribiendo, pausamos la animación */
+.typing .cursorBar {
+  animation: none;
+  opacity: 1;
+}
