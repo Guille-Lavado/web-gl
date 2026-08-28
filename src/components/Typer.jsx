@@ -4,6 +4,7 @@ import "./Typer.css";
 function Typer({ text, repeat = true, onComplete = () => {} }) {
     const [positions, setPositions] = useState([]);
     const [count, setCount] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
     
     const spansRef = useRef([]);        // Referencias a los span de las letras
     const barRef = useRef(false);       // Referencia a la barra
@@ -24,21 +25,44 @@ function Typer({ text, repeat = true, onComplete = () => {} }) {
         medidoRef.current = true;
     }, []);
 
-    // Intervalo simple para avanzar el contador de letras
+    // Intervalo para gestionar la escritura, el borrado y la finalización
     useEffect(() => {
+        const speed = isDeleting ? 75 : 150;
+
         const timer = setInterval(() => {
-            setCount((prev) => prev + 1);
-        }, 250);
+            setCount((prev) => {
+                // Modo Escritura
+                if (!isDeleting) {
+                    if (prev <= text.length) return prev + 1;
+
+                    // Fin de escritura
+                    if (!repeat) {
+                        clearInterval(timer);
+                        return prev;
+                    }
+
+                    setIsDeleting(true);
+                    return prev;
+                }
+
+                // Modo Borrado
+                if (prev > 0) return prev - 1;
+
+                // Fin de borrado
+                setIsDeleting(false);
+                return 0;
+            });
+        }, speed);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [text.length, isDeleting, repeat]);
 
-    // Notifica al padre en un efecto separado cuando se completa
+    // Efecto aislado para notificar la finalización cuando el borrado llega a 0
     useEffect(() => {
-        if (count > text.length) {
-            repeat ? setCount(0) : onComplete();
+        if (isDeleting && count === 0) {
+            onComplete();
         }
-    }, [count, text.length, repeat, onComplete]);
+    }, [count, isDeleting, onComplete]);
 
     // Mueve el cursor a la posición de la letra activa
     useEffect(() => {
@@ -91,7 +115,7 @@ function MultiTyper({ texts, repeat = true }) {
             {texts[activeIndex] && (
                 <Typer
                     key={activeIndex}
-                    repeat={false}
+                    repeat={repeat || activeIndex < texts.length - 1}
                     text={texts[activeIndex]}
                     onComplete={handleComplete}
                 />
