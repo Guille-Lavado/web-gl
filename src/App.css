@@ -9,6 +9,7 @@
   --border-color: #333333;
   --btn-bg: #333333;
   --btn-hover: #444444;
+  --error-msj: #f87171;
 }
 
 /* Override de variables para Tema Claro */
@@ -22,6 +23,7 @@
   --border-color: #e0e0e0;
   --btn-bg: #e5e5e5;
   --btn-hover: #d5d5d5;
+  --error-msj: #e40000;
 }
 
 .App {

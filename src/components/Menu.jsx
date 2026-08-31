@@ -9,6 +9,7 @@ function Menu({theme, toggleTheme}) {
         <li><a href="#repositorios">Proyectos</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#estudios">Titulación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
         <li>
           <button className="btn-theme" onClick={toggleTheme}>
             {theme === 'dark' ? 'Claro' : 'Oscuro'}

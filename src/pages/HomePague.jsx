@@ -1,4 +1,5 @@
-import { Typer, MultiTyper } from '../components/Typer';
+import { MultiTyper } from '../components/Typer';
+import { Formulario } from '../components/Formulario';
 import './HomePague.css';
 
 function HomePague() {
@@ -23,7 +24,8 @@ function HomePague() {
           <MultiTyper texts={saludos} repeat={true} />
         </h1>
       </section>
-      {/* Sección de Presentación / Saludo */}
+
+      {/* Sección de Presentación */}
       <section id='saludo' className='saludo'>
         <h1>Guillermo Lavado</h1>
         <h2>Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</h2>
@@ -36,7 +38,7 @@ function HomePague() {
         </div>
       </section>
 
-      {/* Sección de Repositorios / Habilidades / Gits */}
+      {/* Sección de Repositorios / Gits */}
       <section id='repositorios' className='repositorios'>
         <h2>Mis Gits y Proyectos</h2>
         <p>
@@ -94,6 +96,12 @@ function HomePague() {
           <h3>Educación Secundaria Obligatoria (ESO)</h3>
           <p>IES Griñón | 2015 - 2019</p>
         </div>
+      </section>
+
+      {/* Sección de Contacto */}
+      <section id='contacto' className='contacto'>
+        <h2>Contacto</h2>
+        <Formulario />
       </section>
     </main>
   );
