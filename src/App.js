@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Menu from './components/Menu';
+import Footer from './components/Footer';
 import HomePague from './pages/HomePague';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
       <Menu theme={theme} toggleTheme={toggleTheme} />
       <HomePague />
-      <footer>Gracias por visitar mi web.</footer>
+      <Footer />
     </div>
   );
 }
