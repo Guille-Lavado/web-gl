@@ -21,7 +21,7 @@ function HomePague() {
       {/* Sección de Saludos */}
       <section className='typer'>
         <h1>
-          <MultiTyper texts={saludos} repeat={true} />
+          <MultiTyper texts={saludos} repeat={true} barTop={-4} />
         </h1>
       </section>
 

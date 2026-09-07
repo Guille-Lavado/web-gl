@@ -3,7 +3,12 @@ import './Menu.css';
 function Menu({theme, toggleTheme}) {
   return (
     <nav className='menu'>
-      <span className='logo'>&#62;&#95;</span>
+      <div>
+        <span className='logo'>&#62;&#95;</span>
+        <button className="btn-theme left" onClick={toggleTheme}>
+          {theme === 'dark' ? 'Claro' : 'Oscuro'}
+        </button>
+      </div>
       <div>
         <ul>
           <li><a href="#saludo">Sobre mí</a></li>
@@ -12,7 +17,7 @@ function Menu({theme, toggleTheme}) {
           <li><a href="#estudios">Titulación</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <button className="btn-theme" onClick={toggleTheme}>
+        <button className="btn-theme rigth" onClick={toggleTheme}>
           {theme === 'dark' ? 'Claro' : 'Oscuro'}
         </button>
       </div>

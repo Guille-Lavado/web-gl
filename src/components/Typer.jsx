@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Typer.css";
 
-function Typer({ text, repeat = true, onComplete = () => {} }) {
+function Typer({ text, repeat = true, onComplete = () => {}, barTop = 0, barLeft = 0 }) {
     const [positions, setPositions] = useState([]);
     const [count, setCount] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -71,8 +71,8 @@ function Typer({ text, repeat = true, onComplete = () => {} }) {
         if (count === 0) {
             barRef.current.style.left = "0px";
         } else if (positions[count - 1] !== undefined) {
-            barRef.current.style.left = `${positions[count - 1].left}px`;
-            barRef.current.style.top = `${positions[count - 1].top}px`;
+            barRef.current.style.left = `${positions[count - 1].left + barLeft}px`;
+            barRef.current.style.top = `${positions[count - 1].top + barTop}px`;
         }
     }, [count, positions]);
 
@@ -97,7 +97,7 @@ function Typer({ text, repeat = true, onComplete = () => {} }) {
     );
 }
 
-function MultiTyper({ texts, repeat = true }) {
+function MultiTyper({ texts, repeat = true, barTop, barLeft }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     // Avanza al siguiente texto al finalizar el activo
@@ -118,6 +118,8 @@ function MultiTyper({ texts, repeat = true }) {
                     repeat={repeat || activeIndex < texts.length - 1}
                     text={texts[activeIndex]}
                     onComplete={handleComplete}
+                    barTop={barTop} 
+                    barLeft={barLeft}
                 />
             )}
         </>
