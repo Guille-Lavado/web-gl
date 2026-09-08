@@ -74,7 +74,7 @@ function Typer({ text, repeat = true, onComplete = () => {}, barTop = 0, barLeft
             barRef.current.style.left = `${positions[count - 1].left + barLeft}px`;
             barRef.current.style.top = `${positions[count - 1].top + barTop}px`;
         }
-    }, [count, positions]);
+    }, [count, positions, barTop, barLeft]);
 
     return (
         <div 
