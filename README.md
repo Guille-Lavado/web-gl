@@ -4,6 +4,11 @@ Un portfolio web moderno, interactivo y *responsive* desarrollado con **React**.
 
 Vamos a la web: [guillelavado.com](https://guillelavado.com)
 
+Tambien puedes:
+```
+curl -L guillelavado.com
+```
+
 ---
 
 ## Tecnologías Utilizadas
