@@ -5,3 +5,10 @@ Un portfolio web moderno, interactivo y *responsive* desarrollado con **React**.
 Vamos a la web: [guillelavado.com](https://guillelavado.com)
 
 ---
+
+## Tecnologías Utilizadas
+
+- **Frontend:** React, JavaScript (ES6+), HTML5, CSS3
+- **Integraciones:** EmailJS (para el envío de correos sin backend)
+- **Despliegue:** Netlify
+- **Control de Versiones:** Git & GitHub
