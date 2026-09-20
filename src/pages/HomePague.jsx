@@ -30,7 +30,7 @@ function HomePague() {
         <h1>Guillermo Lavado</h1>
         <h2>Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</h2>
         <p>
-          Desarrollador Web Fullstack con base técnica en sistemas y redes. Apasionado por la resolución 
+          Desarrollador Web Fullstack con base técnica en sistemas y redes. Apasionado por la resolución
           de problemas, adaptable y con experiencia en tecnologías como Next.js, Node.js, PHP, Java y Python.
         </p>
         <div className='contacto-rapido'>
@@ -69,7 +69,7 @@ function HomePague() {
           <h3>Prácticas FP SMR — Geoqubidy (Proyecto Universitario)</h3>
           <span className='fecha'>Marzo 2024 - Mayo 2024</span>
           <p>
-            Desarrollo de funciones de teledetección con Python para el proyecto Geoqubidy (UPM). 
+            Desarrollo de funciones de teledetección con Python para el proyecto Geoqubidy (UPM).
             <br />
             <a href="https://blogs.upm.es/dynamicland">
               Más información del proyecto
